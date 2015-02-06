@@ -4,40 +4,40 @@ ini_set('display_errors',1);
 	
 function dataValidation($array)
 {
-	$var_b = true;
+	$var_b = True;
 			
-	foreach($array is $k => $v)
+	foreach($array as $k => $v)
 	{
 		if($v != null)
 		{
-			if(bool is_int($v) != True)
+			if($v!=(integer)$v)
 			{
-				var_b = False;
+				$var_b = False;
 				echo $k . ' Must be an integer';
 			}
 		}
 		else
 		{
-			var_b = False;
+			$var_b = False;
 			echo 'Missing parameter ' . $k;
 		}
 	}
 	
-	return var_b;
+	return $var_b;
 };
 			
 function isLessThan($array)
 {
-	$mincand = $array[0];
-	$maxcand = $array[1];
-	$minplier = $array[2];
-	$maxplier = $array[3];
+	$mincand = $array['min-multiplicand'];
+	$maxcand = $array['max-multiplicand'];
+	$minplier = $array['min-multiplier'];
+	$maxplier = $array['max-multiplier'];
 			
 	if($mincand > $maxcand)
 	{
 		echo 'Minimum multiplicand is greater than maximum';
 	}
-	else if($minplier > $maxplier)
+	elseif($minplier > $maxplier)
 	{
 		echo 'Minimum multiplier is greater than maximum multiplier';
 	}
@@ -49,21 +49,33 @@ function isLessThan($array)
 
 function createTable($array)
 {
-	$height = $array[1] - $array[0];
-	$width = $array[3] - $array[2];
-	$max_h = $height;
-	$max_w = $width;
+	$min_h = $array['min-multiplicand'];
+	$max_h = $array['max-multiplicand']+2; 
+	$min_w = $array['min-multiplier'];
+	$max_w = $array['max-multiplier']+2;
 	
-	while($height > 0)
+	echo '<table style="border:1px solid black;border-collapse:collapse;">';
+	echo "<caption>Multiplicand Table</caption>";
+	
+	for($k=$min_h;$k < $max_h;$k++)
+	{
+		echo '<th style="border:1px solid black;">';
+		echo '</th>';
+	}
+	
+	for($i=$min_h; $i < $max_h;$i++)
 	{
 		echo '<tr>';
-		while($width > 0)
+		for($j=$min_w;$j < $max_w;$j++)
 		{
-			echo '<td>($max_w-$width)*($max_h-$height)</td>';
-			$width-=1;
+			echo '<td style="border:1px solid black;">';
+			echo $i*$j;
+			echo '</td>';
 		}
-		echo </tr>;
+		echo '</tr>';
+		//echo $height;
 	}
+	echo '</table>';
 }
 
 ?>
@@ -75,7 +87,6 @@ function createTable($array)
 </head>
 <body>
 <?php
-
 if(dataValidation($_GET))
 {
 	if(isLessThan($_GET))
