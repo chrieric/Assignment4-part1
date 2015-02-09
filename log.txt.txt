@@ -15,10 +15,21 @@ End: Thu, 5 Feb 2015 22:17:06 -0600
 Tasks: Mult 2, Finished multtable.php (mostly), now correctly prints error messages and 
 table when viable values are sent via GET.
 
-Start: Thu 6, Feb 2015 13:50:04 -0600
-End: Thu, 5 Feb 2015 13:50:54 -0600
+Start: Fri 6, Feb 2015 13:50:04 -0600
+End: Fri, 5 Feb 2015 13:50:54 -0600
 Tasks: Mult 3, Update Log file.
 
-Start: Thu 6, Feb 2015 11:23:07 -0600
-End: Thu, 5 Feb 2015 22:28:48 -0600
+Start: Fri 6, Feb 2015 11:23:07 -0600
+End: Fri, 5 Feb 2015 22:28:48 -0600
 Tasks: LoopBack 1, Updated log file, complete loopback assignment.
+
+
+Start: Sat 7, Feb 2015 21:14:33 -0600
+End: Sat, 5 Feb 2015 23:03:48 -0600
+Tasks: Login 1, Have a somewhat working login.php file and a general idea of what the rest of'
+the files will look like. Updated log.
+
+
+Start: Sat 8, Feb 2015 23:03:50 -0600
+End: Sun, 8 Feb 2015 00:12:09 -0600
+Tasks: Login 2/3 Updated log file.
